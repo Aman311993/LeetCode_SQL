@@ -1,0 +1,7 @@
+Solution 1 : 
+select email from (select email, count(email) as cnt from person group by email)
+a where a.cnt>1; 
+
+
+Solution 2 :
+select email from person group by email having count(email)>1
