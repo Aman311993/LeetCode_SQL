@@ -1,0 +1,9 @@
+Solution 1 : 
+select name as Customers from customers  c left join orders o 
+on c.id=o.customerId where o.customerId is  null
+
+
+Solution 2 :
+select name as Customers from customers where id not in (
+select customerId from Orders
+)
